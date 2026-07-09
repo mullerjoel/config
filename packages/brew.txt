@@ -17,3 +17,5 @@ openjdk
 jenv
 mvn
 tmux
+typst
+pandoc
