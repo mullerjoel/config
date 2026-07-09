@@ -3,7 +3,7 @@
   "name": "protect main branch",
   "target": "branch",
   "source_type": "Repository",
-  "source": "joel-muller/config",
+  "source": "mullerjoel/config",
   "enforcement": "active",
   "conditions": {
     "ref_name": {
