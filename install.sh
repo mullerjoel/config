@@ -8,9 +8,7 @@ if [ "$OS" = "Darwin" ]; then
     brew update
     brew upgrade
     echo "\nInstalling brew packages"
-    xargs brew install < packages/brew.txt
-    echo "Installing cask packages..."
-    xargs brew install --cask < packages/cask.txt
+    brew bundle install --file $HOME/config/packages/Brewfile
 elif [ "$OS" = "Linux" ]; then
     echo "This is Linux \n"
     echo "Updating package lists and upgrading existing packages..."

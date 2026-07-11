@@ -1,5 +1,0 @@
-nikitabobko/tap/aerospace
-iterm2
-intellij-idea
-webstorm
-brave-browser
