@@ -10,12 +10,6 @@ Clone the Repository and install the required packages. You can also delete or a
 sh install.sh
 ```
 
-## Install Antigen 
-
-```bash
-sh antigen.sh
-```
-
 > [!NOTE]
 > If `zsh` is not your default shell (check with `echo $SHELL`), install it and set it as your default with `chsh -s "$(which zsh)"`.
 > After changing your default shell, you may need to restart your computer for the change to take effect.

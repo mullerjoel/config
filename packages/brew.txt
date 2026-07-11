@@ -19,3 +19,4 @@ mvn
 tmux
 typst
 pandoc
+sheldon

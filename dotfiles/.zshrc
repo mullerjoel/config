@@ -13,27 +13,9 @@ is_linux() {
   [ "$(uname -s)" = "Linux" ]
 }
 
-source "$HOME/antigen.zsh"
-
-# Load the oh-my-zsh's library
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle paulirish/git-open
-
-# Load the theme.
-antigen theme clean
-
-# Tell Antigen that you're done.
-antigen apply
+# sheldon plugin manager
+export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+eval "$(sheldon source)"
 
 # Local user binaries
 export PATH="$HOME/.local/bin:$PATH"

@@ -1,0 +1,35 @@
+shell = "zsh"
+
+[plugins.oh-my-zsh]
+github = "ohmyzsh/ohmyzsh"
+
+[plugins.git]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/git"
+use = ["git.plugin.zsh"]
+
+[plugins.heroku]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/heroku"
+use = ["heroku.plugin.zsh"]
+
+[plugins.pip]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/pip"
+use = ["pip.plugin.zsh"]
+
+[plugins.command-not-found]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/command-not-found"
+use = ["command-not-found.plugin.zsh"]
+
+[plugins.clean]
+github = "ohmyzsh/ohmyzsh"
+dir = "themes"
+use = ["clean.zsh-theme"]
+
+[plugins.git-open]
+github = "paulirish/git-open"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
