@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 OS="$(uname)"
 
@@ -19,5 +19,10 @@ elif [ "$OS" = "Linux" ]; then
 else
     echo "Unknown system: $OS"
 fi
+
+echo "\nLinking Dotfiles"
+
+stow -v -d $HOME/config -t $HOME dotfiles
+stow -v -d $HOME/config -t $HOME gitconfig
 
 echo "\nDone."
