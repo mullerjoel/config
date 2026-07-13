@@ -13,10 +13,6 @@ is_linux() {
   [ "$(uname -s)" = "Linux" ]
 }
 
-# sheldon plugin manager
-export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
-eval "$(sheldon source)"
-
 # Local user binaries
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -30,6 +26,10 @@ export PATH="/opt/homebrew/bin:$PATH"
 # jenv for managing Java versions
 export PATH="$HOME/.jenv/bin:$PATH"
 has jenv && eval "$(jenv init -)"
+
+# sheldon plugin manager
+export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+has sheldon && eval "$(sheldon source)"
 
 # fzf key bindings and completion
 has fzf && source <(fzf --zsh)
