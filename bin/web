@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -euo pipefail
+
+[ -f "$HOME/websites.txt" ] || { echo "there is no file ~/websites.txt" >&2; exit 1; }
+
+site=$(fzf < "$HOME/websites.txt")
+
+open "$site"
