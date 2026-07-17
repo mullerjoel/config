@@ -22,6 +22,7 @@ export PATH="$HOME/notes/bin:$PATH"
 
 # Homebrew path (Apple Silicon)
 export PATH="/opt/homebrew/bin:$PATH"
+has brew && eval "$(brew shellenv zsh)"
 
 # jenv for managing Java versions
 export PATH="$HOME/.jenv/bin:$PATH"
