@@ -9,6 +9,7 @@ if [ "$OS" = "Darwin" ]; then
     brew upgrade
     printf "\nInstalling brew packages\n"
     brew bundle install --file "$HOME/config/packages/Brewfile"
+    brew bundle cleanup --file "$HOME/config/packages/Brewfile"
 elif [ "$OS" = "Linux" ]; then
     printf "This is Linux\n\n"
     printf "Updating package lists and upgrading existing packages...\n"
