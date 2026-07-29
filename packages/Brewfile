@@ -51,5 +51,7 @@ brew "tmux"
 brew "tree-sitter-cli"
 # Markup-based typesetting system
 brew "typst"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Cli tool to print sequence of dates
 cask "mullerjoel/tap/pdate", trusted: true

@@ -2,8 +2,16 @@
 
 set -euo pipefail
 
-[ -f "$HOME/websites.txt" ] || { echo "there is no file ~/websites.txt" >&2; exit 1; }
-
-site=$(fzf < "$HOME/websites.txt")
-
-open "$site"
+if [ -f "$HOME/websites.yml" ]; then
+    url=$(
+        yq -r '.[] | "\(.name)\t\(.url)"' "$HOME/websites.yml" |
+        fzf --delimiter='\t' --with-nth=1 --accept-nth=2
+    )
+    [ -n "$url" ] && open "$url"
+elif [ -f "$HOME/websites.txt" ]; then
+    url=$(fzf < "$HOME/websites.txt")
+    [ -n "$url" ] && open "$url"
+else
+    echo "there is no websites.yml or websites.txt in $HOME" >&2
+    exit 1
+fi
