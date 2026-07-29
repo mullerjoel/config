@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+file="$HOME/repositories.txt"
+
+[ -f "$file" ] || { echo "there is no file ~/repositories.txt" >&2; exit 1; }
+
+repo=$(fzf < "$file")
+
+if [[ "${1:-}" == "--clone" || "${1:-}" == "-c" ]]; then
+    git clone "$repo"
+else
+    site=$(echo "$repo" | sed -E 's#git@([^:]+):#https://\1/#; s#\.git$##')
+    open "$site"
+fi
