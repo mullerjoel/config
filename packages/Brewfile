@@ -55,5 +55,7 @@ brew "typst"
 brew "yq"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Cli tool to print sequence of dates
 cask "mullerjoel/tap/pdate", trusted: true
