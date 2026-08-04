@@ -1,4 +1,6 @@
 tap "mullerjoel/tap", "https://github.com/mullerjoel/homebrew-tap.git"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Command-line fuzzy finder written in Go
@@ -17,6 +19,8 @@ brew "go"
 brew "jenv"
 # Handy way to save and run project-specific commands
 brew "just"
+# Linux virtual machines
+brew "lima"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
