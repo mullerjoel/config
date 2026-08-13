@@ -25,6 +25,8 @@ brew "kubectx"
 brew "kubernetes-cli"
 # Linux virtual machines
 brew "lima"
+# Powerful, lightweight programming language
+brew "lua"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
