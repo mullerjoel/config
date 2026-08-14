@@ -25,6 +25,10 @@ inoremap <C-c> <Esc>
 
 nnoremap <leader>sf :action GotoFile<CR>
 nnoremap <leader>sg :action SearchEverywhere<CR>
+nnoremap <leader>b :action Back<CR>
+nnoremap <leader>f :action Forward<CR>
+nnoremap <leader>wo :action CloseAllEditorsButActive<CR>
+nnoremap <leader>e :action SelectInProjectView<CR>
 
 nnoremap grn :action RenameElement<CR>
 nnoremap grd :action GotoDeclaration<CR>
