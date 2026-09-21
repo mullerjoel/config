@@ -32,6 +32,9 @@ has jenv && eval "$(jenv init -)"
 export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 has sheldon && eval "$(sheldon source)"
 
+# go path
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # fzf key bindings and completion
 has fzf && source <(fzf --zsh)
 
