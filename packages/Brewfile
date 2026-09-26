@@ -71,3 +71,4 @@ cask "brave-browser"
 cask "ghostty"
 # Cli tool to print sequence of dates
 cask "mullerjoel/tap/pdate", trusted: true
+cask "mullerjoel/tap/web", trusted: true
