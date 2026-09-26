@@ -54,3 +54,8 @@ is_mac && has pbcopy && alias copy='pbcopy'
 is_mac && has pbpaste && alias paste='pbpaste'
 alias l='ls -lha'
 alias k='kubectl'
+
+dir() {
+  local d=$(fzf < ~/directories.txt)
+  [[ -n "$d" ]] && cd ${~d}
+}
