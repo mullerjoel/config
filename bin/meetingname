@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# if you just want to yap and are looking for a good meeting name
+# If you just want to yap and are looking for a good meeting name
 
 first=('Agile' 'Agentic' 'Leadership' 'Strategic' 'Innovative' 'Digital' 'Customer-Centric' 'Data-Driven')
-second=('Growth' 'Impact' 'Value' 'Focus' 'Change' 'Success' 'Progress' 'Strategy' 'Innovation' 'Quality' 'Speed' 'Scale' 'Vision' 'Results' 'Momentum' 'Low Hanging Fruit')
-third=('Meeting' 'Workshop' 'Meetup' 'Sync' 'Session' 'Brainstorm')
+second=('Growth' 'Impact' 'Value' 'Focus' 'Change' 'Success' 'Progress' 'Strategy' 'Innovation' 'Quality' 'Speed' 'Scale' 'Vision' 'Results' 'Momentum' 'Low-Hanging Fruit' 'Quick Win' 'Pivot' 'Acceleration' 'Management' 'Decision')
+third=('Meeting' 'Workshop' 'Meetup' 'Sync' 'Session' 'Brainstorm' 'Deep Dive' 'Bootcamp' 'Kickoff' 'Review' 'Planning')
 
 echo "${first[RANDOM % ${#first[@]}]} ${second[RANDOM % ${#second[@]}]} ${third[RANDOM % ${#third[@]}]}"
