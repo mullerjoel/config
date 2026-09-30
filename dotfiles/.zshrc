@@ -29,11 +29,13 @@ export PATH="$HOME/.jenv/bin:$PATH"
 has jenv && eval "$(jenv init -)"
 
 # sheldon plugin manager
-export ZSH="$HOME/.local/share/sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 has sheldon && eval "$(sheldon source)"
 
 # go path
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# starship
+has starship && eval "$(starship init zsh)"
 
 # fzf key bindings and completion
 has fzf && source <(fzf --zsh)
