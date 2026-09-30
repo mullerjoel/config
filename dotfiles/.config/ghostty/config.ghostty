@@ -1,11 +1,15 @@
 background = 101010
 foreground = eeeeee
-font-size = 16
+font-size = 15
 font-family = Courier New Bold
 theme = Catppuccin Frappe
 
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
+
+window-save-state = never
+window-inherit-working-directory = false
+working-directory = home
 
 macos-option-as-alt = false
