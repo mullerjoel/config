@@ -13,6 +13,9 @@ is_linux() {
   [ "$(uname -s)" = "Linux" ]
 }
 
+# autocompletion
+autoload -Uz compinit && compinit
+
 # Local user binaries
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -54,7 +57,7 @@ is_linux && has xsel && alias copy='xsel --input --clipboard'
 is_linux && has xsel && alias paste='xsel --output --clipboard'
 is_mac && has pbcopy && alias copy='pbcopy'
 is_mac && has pbpaste && alias paste='pbpaste'
-alias l='ls -lha'
+alias l='ls -lha --color=auto'
 alias k='kubectl'
 
 dir() {
