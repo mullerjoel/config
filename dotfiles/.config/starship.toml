@@ -9,3 +9,6 @@ truncate_to_repo = false
 
 [time]
 disabled = false
+
+[cmd_duration]
+disabled = true
