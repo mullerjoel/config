@@ -52,6 +52,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 has pyenv && eval "$(pyenv init - zsh)"
 has pyenv && eval "$(pyenv virtualenv-init -)"
 
+# k9s config dir
+export K9S_CONFIG_DIR="$HOME/.config/k9s"
+
 # Shell aliases
 is_linux && has xsel && alias copy='xsel --input --clipboard'
 is_linux && has xsel && alias paste='xsel --output --clipboard'

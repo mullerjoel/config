@@ -1,0 +1,17 @@
+k9s:
+  prompt:
+    bgColor: default
+  body:
+    bgColor: default
+  frame:
+    title:
+      bgColor: default
+    crumbs:
+      bgColor: default
+  views:
+    table:
+      bgColor: default
+      header:
+        bgColor: default
+    logs:
+      bgColor: default
