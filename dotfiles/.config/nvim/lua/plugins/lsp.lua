@@ -5,7 +5,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
-		require("mason-lspconfig").setup({ ensure_installed = { "gopls", "lua_ls" } })
+		require("mason-lspconfig").setup({ ensure_installed = { "gopls", "lua_ls", "pyright" } })
 
 		vim.lsp.config("lua_ls", {
 			settings = {
@@ -17,7 +17,7 @@ return {
 			},
 		})
 
-		vim.lsp.enable({ "gopls", "lua_ls" })
+		vim.lsp.enable({ "gopls", "lua_ls", "pyright" })
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(ev)
