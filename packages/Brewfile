@@ -1,3 +1,4 @@
+tap "homebrew/core"
 tap "mullerjoel/tap", "https://github.com/mullerjoel/homebrew-tap.git"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
@@ -77,7 +78,6 @@ brew "yq"
 cask "brave-browser"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Cli tool to print sequence of dates
-cask "mullerjoel/tap/pdate", trusted: true
-# Fuzzy-find and open bookmarked URLs
-cask "mullerjoel/tap/web", trusted: true
+go "github.com/spf13/cobra-cli"
+go "github.com/mullerjoel/pdate"
+go "github.com/mullerjoel/web"
