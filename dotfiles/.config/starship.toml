@@ -9,6 +9,42 @@ truncate_to_repo = false
 
 [time]
 disabled = false
+format = '[$time]($style) '
 
 [cmd_duration]
 disabled = true
+
+[golang]
+symbol = ''
+format = '[$symbol($version )]($style)'
+
+[java]
+symbol = ''
+format = '[${symbol}(${version} )]($style)'
+
+[lua]
+symbol = ''
+format = '[$symbol($version )]($style)'
+
+[nodejs]
+symbol = ''
+format = '[$symbol($version )]($style)'
+
+[package]
+symbol = ''
+format = '[$symbol$version]($style) '
+
+[kubernetes]
+symbol = ''
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+
+[maven]
+disabled = true
+
+[python]
+symbol = ''
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
