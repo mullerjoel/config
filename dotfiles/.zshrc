@@ -67,3 +67,19 @@ dir() {
   local d=$(fzf < ~/.directories.txt)
   [[ -n "$d" ]] && cd ${~d}
 }
+
+ch() {
+    local file="$HOME/.cheatsheet.yaml"
+    local selection=$(
+        yq -r 'to_entries[] | .key as $name | .value[] | $name + " " + .cmd + "\t" + (.des // "")' "$file" \
+            | column -t -s $'\t' \
+            | fzf \
+            | sed 's/  .*//' \
+            | tr -d '\n'
+    )
+    if [[ $1 == -c ]]; then
+        printf %s "$selection" | copy
+    else
+        print -z "$selection"
+    fi
+}

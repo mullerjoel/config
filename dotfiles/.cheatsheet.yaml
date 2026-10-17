@@ -1,0 +1,294 @@
+# This is my personal cheatsheet. While every effort has been made to ensure the contents are useful, I am not responsible for anything that happens if you use this
+
+base64:
+  - cmd: -i key -o git-crypt-key.asc
+    des: encrypt
+  - cmd: -d -i git-crypt-key.asc -o key
+    des: decrypt
+
+head:
+  - cmd: -n 20 file.txt
+    des: show first 20 lines
+
+kubectl:
+  - cmd: get all
+    des: list all ressources
+  - cmd: logs -f <ressource>
+    des: follow log in realtime
+  - cmd: top pods
+    des: show resource usage of pods
+  - cmd: exec -it <pod-name> -- sh
+    des: open a shell inside a running pod
+
+brew:
+  - cmd: --prefix
+    des: see path of brew
+  - cmd: bundle install --file=Brewfile
+    des: install packages from brewfile
+  - cmd: bundle dump --force
+    des: create Brewfile from installed packages
+  - cmd: bundle check
+    des: check if everything is installed
+  - cmd: bundle cleanup --force
+    des: remove packages not in Brewfile
+
+chown:
+  - cmd: -R <owner>:<groupowner> <ressource>
+    des: change ownership of file or directory
+
+chmod:
+  - cmd: 600 file
+    des: add numbers 4 read 2 write 1 execute and its user group other
+  - cmd: u+r,g-w,o=x,a+rx file
+    des: file permissions for users groups and others using symbolic operators
+
+chsh:
+  - cmd: -s /bin/bash
+    des: change shell for current user
+
+git:
+  - cmd: fetch -p
+    des: fetch the origin branches and delete the one which dont exist anymore
+  - cmd: init --bare
+    des: init a bare repositiry with only the .git folder
+  - cmd: pull
+    des: git fetch && git merge origin main == git pull
+  - cmd: push origin <localbranch>:<remotebranch>
+    des: leaving localbranch empty will delete the branch
+  - cmd: rebase --strategy-option=ours main
+    des: rebases current branch onto main and favoring main version
+  - cmd: checkout --ours -- .
+    des: resolve conflics with a rule
+  - cmd: checkout --theirs -- .
+    des: resolve conflics with a rule
+  - cmd: remote -v
+  - cmd: remote remove origin
+  - cmd: remote add origin <url>
+  - cmd: remote set-url origin <url>
+    des: change remote
+  - cmd: remote set-url --add --push origin <url>
+    des: add mulitple remotes
+  - cmd: push origin --delete <tagname>
+    des: delete tag on remote
+  - cmd: worktree list
+    des: list the worktrees
+  - cmd: worktree add <path> <branch>
+    des: add a worktree
+  - cmd: worktree prune
+    des: remove obsolete worktree references
+
+date:
+  - cmd: "\"+%Y-%m-%d %H:%M:%S\""
+
+docker:
+  - cmd: exec -it <container_name_or_id> bash
+    des: go into docker shell
+  - cmd: run -rm -p <host_port>:<container_port> <image_name>
+    des: run container with port mapping and automatically remove container after run
+  - cmd: run -it <container> bash
+    des: starts container and opens an interactive Bash shell
+  - cmd: system prune -a --volumes
+    des: removes all containers images networks caches and volumes not currently in use
+  - cmd: compose down --rmi all
+  - cmd: compose down -v
+  - cmd: compose build
+  - cmd: compose up -d
+
+du:
+  - cmd: -sh <directory>
+    des: see how big a file or directory is
+  - cmd: -sh --max-depth=1 <directory>
+    des: see recusively how big directory is
+
+fnm:
+  - cmd: install
+  - cmd: use
+  - cmd: list
+
+for:
+  - cmd: i in $(seq 1 10); do echo "$i"; done
+
+jenv:
+  - cmd: doctor
+    des: verify the jenv installation
+  - cmd: enable-plugin export
+    des: enable the export plugin (restart the shell after this)
+  - cmd: add <jdk>
+    des: add jdk (the path needs to end with an /Home folder)
+  - cmd: versions
+    des: list managed jdks
+  - cmd: global 25
+    des: set 25 as global java version
+    des: list managed jdks
+
+kill:
+  - cmd: -9 <process-id>
+    des: force kill the process with the pid 5152 immediately
+
+limactl:
+  - cmd: create template:docker
+    des: Create a new Lima instance from the docker template
+  - cmd: start template:k8s
+    des: Create and start a new Lima instance from the k8s template
+  - cmd: list
+    des: List all Lima instances and their current status
+  - cmd: start docker
+    des: Start an existing Lima instance named docker
+  - cmd: shell docker
+    des: Open an interactive shell inside the docker Lima instance
+  - cmd: stop docker
+    des: Stop the running docker Lima instance
+  - cmd: delete docker
+    des: Delete the docker Lima instance
+
+ln:
+  - cmd: ln file1.txt link.txt
+    des: create a hard link
+  - cmd: ln -s file1.txt link.txt
+    des: create a symbolic (soft) link
+
+mvn:
+  - cmd: mvn clean install -U
+    des: remove old build output, start from a fresh state and also remove snapshots
+  - cmd: mvn spring-boot:run -Dspring-boot.run.profiles=dev
+    des: run springboot with profile
+
+ollama:
+  - cmd: serve
+  - cmd: list
+  - cmd: run llama3:8b
+  - cmd: "run llama3:8b \"Explain Kubernetes\""
+    des: "also possible to pipe echo \"Explain Kubernetes\" | ollama run llama3:8b"
+
+pandoc:
+  - cmd: file1.md file2.md file3.md -o merged.md
+    des: Merge markdown files together
+  - cmd: example.md -o example_with_toc.md --toc
+    des: Make table of content
+  - cmd: example.md -o example.pdf --pdf-engine=typst
+    des: Markdown to PDF
+
+ps:
+  - cmd: f
+    des: show processes with parent child relation
+  - cmd: aux
+    des: show all processes for all users in detailed format (BSD style)
+
+pyenv:
+  - cmd: install <py-version>
+  - cmd: uninstall <py-version>
+  - cmd: switch <py-version>
+  - cmd: versions
+  - cmd: global <py-version>
+  - cmd: virtualenv <py-version> <env-name>
+  - cmd: activate <env-name>
+  - cmd: deactivate
+  - cmd: uninstall <env-name>
+
+python:
+  - cmd: -m venv venv
+    des: create virtual environment
+  - cmd: venv/bin/activate
+    des: initialize virtual environment
+  - cmd: -m pip install -r requirements.txt
+    des: install dependencies
+  - cmd: -m pip install --upgrade pip
+    des: upgrade pip
+
+read:
+  - cmd: name
+    des: read a line from user input in shell script
+  - cmd: "-p \"Enter name: \" name"
+    des: read with prompt text
+
+sed:
+  - cmd: "'s/cat/dog/' file.txt"
+    des: replace first occurrence of a word in each line
+  - cmd: "'s/cat/dog/g' file.txt"
+    des: replace all occurrences in each line and print out
+  - cmd: "-i 's/cat/dog/g' file.txt"
+    des: replace straight in file
+
+ssh-copy-id:
+  - cmd: -i ~/.ssh/key.pub -p 2222 root@localhost
+    des: Copy public key to server on port 2222
+
+ssh-keygen:
+  - cmd: -t ed25519
+  - cmd: -t ed25519 -C <name> -f ~/.ssh/key
+    des: create key with name and place
+  - cmd: -t rsa -b 4096
+  - cmd: -t rsa -b 4096 -C <name> -f ~/.ssh/key
+    des: create key with name and place
+
+ssh:
+  - cmd: -i ~/.ssh/key root@localhost -p 2222
+    des: also possible to set ssh config with Host HostName User Port IdentityFile
+
+tar:
+  - cmd: -cf files.tar files
+    des: create a tar archive
+  - cmd: -xpf files.tar files
+    des: a good archive
+
+tail:
+  - cmd: -n 20 file.txt
+    des: show last 20 lines
+
+tree:
+  - cmd: tree -I '.git' -a --gitignore -L 2
+    des: show also hidden files ignore git dir and use gitignore
+
+tmux:
+  - cmd: new-session -d -s <sessionname> -n <windowname>
+    des: create new session with a first window
+  - cmd: new-window -t <sessionname> -n <windowname>
+    des: (Ctrl-b + c) add new window to a session
+  - cmd: new-window -a
+    des: add a new window to the right
+  - cmd: attach -t <sessionname>
+    des: go into the session
+  - cmd: kill-session -t <sessionname>
+    des: kill the session
+  - cmd: rename-window -t <sessionname>:<window_number_or_name> <newname>
+    des: (Ctrl-b + ,) - rename a window
+  - cmd: kill-window -t <sessionname>:<window_number_or_name>
+    des: (Ctrl-b + x) kill a window
+  - cmd: detach
+    des: (Ctrl-b + d) go out of a session
+  - cmd: send-keys -t "$SESSION":"$name" "cd $dir" C-m
+    des: send a command in a tmux session
+  - cmd: split-window -h
+    des: (Ctrl-b + %) split window horizontally
+  - cmd: split-window -v
+    des: (Ctrl-b + ") split window vertically
+
+tr:
+  - cmd: "'a-z' 'A-Z'"
+
+typst:
+  - cmd: compile file.typ
+    des: Creates file.pdf in working directory
+  - cmd: compile source.typ output.pdf
+    des: Creates a PDF file at the desired path
+  - cmd: watch file.typ
+    des: Watches source files and recompiles on changes
+
+uniq:
+  - cmd: file.txt
+    des: remove adjacent duplicate lines
+
+while:
+  - cmd: true; do sleep 1; done
+
+whereis:
+  - cmd: ls
+    des: locate binary, source, and man pages
+
+which:
+  - cmd: ls
+    des: show path of executable
+
+zip:
+  - cmd: -r files.zip files
+    des: zip a directory
