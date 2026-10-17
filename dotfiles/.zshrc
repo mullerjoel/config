@@ -64,6 +64,6 @@ alias l='ls -lha --color=auto'
 alias k='kubectl'
 
 dir() {
-  local d=$(fzf < ~/directories.txt)
+  local d=$(fzf < ~/.directories.txt)
   [[ -n "$d" ]] && cd ${~d}
 }
