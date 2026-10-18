@@ -1,8 +1,14 @@
 tap "homebrew/core"
+# Aquarium animation in ASCII art
+brew "asciiquarium"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Banner-like program prints strings as ASCII art
+brew "figlet"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Distributed revision control system
@@ -55,6 +61,8 @@ brew "ripgrep"
 brew "sheldon"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Prints a steam locomotive if you type sl instead of ls
+brew "sl"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Tail multiple Kubernetes pods & their containers
