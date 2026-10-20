@@ -262,6 +262,8 @@ tmux:
     des: (Ctrl-b + %) split window horizontally
   - cmd: split-window -v
     des: (Ctrl-b + ") split window vertically
+  - cmd: switch-client -t <sessionname>
+    des: (Ctrl-b + s) switch to another session
 
 tr:
   - cmd: "'a-z' 'A-Z'"
