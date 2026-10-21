@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Load tmuxp sessions
+
+if [ ! -d "$HOME/.tmuxp" ]; then
+    echo "tmuxp config directory not found: $HOME/.tmuxp"
+    exit 1
+fi
+
+printf '%s\n' "$HOME"/.tmuxp/*.yaml |
+    sed "s|$HOME/.tmuxp/||; s/\.yaml$//" |
+    fzf --multi |
+    xargs -r -I {} tmuxp load "$HOME/.tmuxp/{}.yaml"

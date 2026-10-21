@@ -73,6 +73,8 @@ brew "stow"
 brew "stylua"
 # Terminal multiplexer
 brew "tmux"
+# Tmux session manager. Built on libtmux
+brew "tmuxp"
 # Parser generator tool
 brew "tree-sitter-cli"
 # Markup-based typesetting system
