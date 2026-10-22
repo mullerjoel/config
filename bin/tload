@@ -7,7 +7,6 @@ if [ ! -d "$HOME/.tmuxp" ]; then
     exit 1
 fi
 
-printf '%s\n' "$HOME"/.tmuxp/*.yaml |
-    sed "s|$HOME/.tmuxp/||; s/\.yaml$//" |
-    fzf --multi |
-    xargs -r -I {} tmuxp load "$HOME/.tmuxp/{}.yaml"
+sessions=$(ls "$HOME"/.tmuxp/*.yaml | sed 's|.*/||; s|\.yaml$||' | fzf --multi)
+
+[ -n "$sessions" ] && tmuxp load $sessions
