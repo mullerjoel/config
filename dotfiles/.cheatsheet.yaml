@@ -142,15 +142,15 @@ limactl:
     des: Delete the docker Lima instance
 
 ln:
-  - cmd: ln file1.txt link.txt
+  - cmd: file1.txt link.txt
     des: create a hard link
-  - cmd: ln -s file1.txt link.txt
+  - cmd: -s file1.txt link.txt
     des: create a symbolic (soft) link
 
 mvn:
-  - cmd: mvn clean install -U
+  - cmd: clean install -U
     des: remove old build output, start from a fresh state and also remove snapshots
-  - cmd: mvn spring-boot:run -Dspring-boot.run.profiles=dev
+  - cmd: spring-boot:run -Dspring-boot.run.profiles=dev
     des: run springboot with profile
 
 ollama:
@@ -236,7 +236,7 @@ tail:
     des: show last 20 lines
 
 tree:
-  - cmd: tree -I '.git' -a --gitignore -L 2
+  - cmd: -I '.git' -a --gitignore -L 2
     des: show also hidden files ignore git dir and use gitignore
 
 tmux:
@@ -264,6 +264,10 @@ tmux:
     des: (Ctrl-b + ") split window vertically
   - cmd: switch-client -t <sessionname>
     des: (Ctrl-b + s) switch to another session
+  - cmd: kill-server
+    des: kill every session and window
+  - cmd: kill-window -a
+    des: kill all windows in the current session
 
 tr:
   - cmd: "'a-z' 'A-Z'"
