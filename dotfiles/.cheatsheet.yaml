@@ -87,6 +87,8 @@ docker:
     des: run container with port mapping and automatically remove container after run
   - cmd: run -it <container> bash
     des: starts container and opens an interactive Bash shell
+  - cmd: build -t app:latest -t app:1.0.0 .
+    des: build a image with a version tag
   - cmd: system prune -a --volumes
     des: removes all containers images networks caches and volumes not currently in use
   - cmd: compose down --rmi all
