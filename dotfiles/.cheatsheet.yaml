@@ -83,8 +83,12 @@ date:
 docker:
   - cmd: exec -it <container_name_or_id> bash
     des: go into docker shell
-  - cmd: run -rm -p <host_port>:<container_port> <image_name>
+  - cmd: run --rm -p <host_port>:<container_port> <image_name>
     des: run container with port mapping and automatically remove container after run
+  - cmd: run --rm -it -p <host_port>:<container_port> <image_name> bash
+    des: run container with port mapping and bash into it
+  - cmd: container prune
+    des: remove all stoped container
   - cmd: run -it <container> bash
     des: starts container and opens an interactive Bash shell
   - cmd: build -t app:latest -t app:1.0.0 .
