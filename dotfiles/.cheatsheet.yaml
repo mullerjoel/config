@@ -19,6 +19,8 @@ kubectl:
     des: show resource usage of pods
   - cmd: exec -it <pod-name> -- sh
     des: open a shell inside a running pod
+  - cmd: run curl --rm -it --image=curlimages/curl -- sh
+    des: start a temporary curl pod with a shell
 
 brew:
   - cmd: --prefix
@@ -93,6 +95,8 @@ docker:
     des: starts container and opens an interactive Bash shell
   - cmd: build -t app:latest -t app:1.0.0 .
     des: build a image with a version tag
+  - cmd: tag <source_image>:<tag> <target_image>:<new_tag>
+    des: add a new tag to an existing image
   - cmd: system prune -a --volumes
     des: removes all containers images networks caches and volumes not currently in use
   - cmd: compose down --rmi all
