@@ -93,6 +93,8 @@ docker:
     des: remove all stoped container
   - cmd: run -it <container> bash
     des: starts container and opens an interactive Bash shell
+  - cmd: run -it --rm --entrypoint sh <image_name>
+    des: start the container with an entrypoint
   - cmd: build -t app:latest -t app:1.0.0 .
     des: build a image with a version tag
   - cmd: tag <source_image>:<tag> <target_image>:<new_tag>
