@@ -17,4 +17,5 @@ require("lazy").setup({
 	{ import = "plugins.lsp" },
 	{ import = "plugins.completions" },
 	{ import = "plugins.treesitter" },
+	{ import = "plugins.java" },
 })
