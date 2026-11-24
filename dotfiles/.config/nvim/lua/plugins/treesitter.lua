@@ -9,6 +9,10 @@ return {
 			"markdown",
 			"markdown_inline",
 			"python",
+			"angular",
+			"html",
+			"css",
+			"scss",
 		})
 
 		vim.api.nvim_create_autocmd("FileType", {
